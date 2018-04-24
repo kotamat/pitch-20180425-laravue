@@ -73,8 +73,9 @@ client/←追加
 
 ### nuxt.config.jsの設定を調整
 
-+++code?nuxt.config.js&lang=js
++++?code=src/laravel/nuxt.config.js&lang=js
 
+hogehoge
 `client/` を認識するように設定を追加
 
 +++
