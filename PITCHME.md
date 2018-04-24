@@ -203,6 +203,8 @@ client/←追加
 - developmentビルドとprodビルドで分ける
 - 起動設定を対象jsファイルに向ける
 
++++
+
 ### サーバーサイド用のjsファイルを作成
 
 +++?code=src/express/server.js&lang=js
@@ -215,11 +217,15 @@ client/←追加
 @[40](start用の設定を注入)
 @[41](ポートを開ける)
 
++++
+
 ### 起動設定を対象jsファイルに向ける
 
 +++?code=src/express/application_start.sh&lang=bash
 
 再起動のスクリプトをserver.jsに向ける
+
++++
 
 ## まとめ
 
