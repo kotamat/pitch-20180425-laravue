@@ -1,0 +1,23 @@
+server {
+#    ...
+
+    location ^~ /api/ {
+        root   /path/to/app/dir/public/;
+        index   index.php;
+
+        try_files $uri $uri/ /api/index.php?$query_string;
+
+        location ~ \.php$ {
+            fastcgi_pass   phpfpm;
+            include        fastcgi_params;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_param  SCRIPT_FILENAME  $realpath_root/index.php;
+        }
+    }
+    location ~ /(.*)$ {
+        alias  /path/to/app/dir/dist/;
+        index  index.html;
+
+        try_files /$1 /$1/ /index.html =404;
+    }
+}

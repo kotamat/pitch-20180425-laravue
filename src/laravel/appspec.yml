@@ -1,0 +1,20 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /path/to/app/dir
+permissions:
+  - object: /path/to/app/dir
+    pattern: "**"
+    owner: nginx
+    group: nginx
+    mode: 664
+    type:
+      - file
+  - object: /path/to/app/dir
+    pattern: "**"
+    owner: nginx
+    group: nginx
+    mode: 755
+    type:
+      - directory

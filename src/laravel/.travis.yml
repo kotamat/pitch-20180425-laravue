@@ -1,0 +1,31 @@
+before_script:
+- composer install --no-interaction
+- yarn install
+script:
+- ./node_modules/.bin/nuxt generate
+before_deploy:
+- zip -r latest.zip . -x .git/ -x storage -x .env -x node_modules -q
+- mkdir -p deploy_files
+- mv latest.zip deploy_files/latest.zip
+deploy:
+  - provider: s3
+    access_key_id: &key XXXXX
+    secret_access_key: &secret
+      secure: XXXXX
+    local_dir: deploy_files
+    skip_cleanup: true
+    region: &region ap-northeast-1
+    on: &target
+      branch: master
+    bucket: &bucket deploy-bucket
+  - provider: codedeploy
+    access_key_id: *key
+    secret_access_key: *secret
+    bucket: *bucket
+    key: latest.zip
+    skip_cleanup: true
+    bundle_type: zip
+    region: *region
+    application: codedeploy-app-name
+    deployment_group: deployment-group
+    on: *target

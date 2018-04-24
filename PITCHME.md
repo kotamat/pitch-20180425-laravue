@@ -75,39 +75,42 @@ client/←追加
 
 +++?code=src/laravel/nuxt.config.js&lang=js
 
-hogehoge
 `client/` を認識するように設定を追加
 
 +++
 
 ### TravisでNuxtGenerateする
 
-+++code?.travis.yml&lang=yml
++++?code=src/laravel/.travis.yml&lang=yml
 
-依存パッケージのinstall
-先にgenerate
-不要なディレクトリを除いてzip化
-S3に上げる
+@[10-12](依存パッケージのinstall)
+@[13-14](先にgenerate)
+@[15-18](不要なディレクトリを除いてzip化)
+@[20-29](S3に上げる)
 
 +++
 
 ### dist込みの全体をCodedeployで設置
 
-+++code?appspec.yml&lang=yml
++++?code=src/laravel/appspec.yml&lang=yml
 
-普通に設置する
+@[3-5](普通に設置する)
 
 +++
 
 ### Nginxでリバプロする
 
-ディレクトリで分岐
-Generateしているファイルは普通にtry_filesで引っかかる
-/apiになっているものはLaravel側を参照しにいく
++++?code=src/laravel/app.conf.nginx&lang=nginx
+
+@[4,17](ディレクトリで分岐)
+@[17-22](Generateしているファイルは普通にtry_filesで引っかかる)
+@[4-16](/apiになっているものはLaravel側を参照しにいく)
 
 +++
 
 ### (補足)ビルド時にチェックしておくべきポイント
+
++++?code=src/laravel/.travis.yml&lang=yml
 
 `nuxt` コマンドで生成するときと`nuxt generate`する時で、ビルドのフローが異なっているので、
 CI側では`nuxt generate`が失敗しないこともチェックする必要がある
