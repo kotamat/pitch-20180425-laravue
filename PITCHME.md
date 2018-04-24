@@ -83,14 +83,18 @@ client/←追加
 
 +++?code=src/laravel/.travis.yml&lang=yml
 
-@[10-12](依存パッケージのinstall)
-@[13-14](先にgenerate)
-@[15-18](不要なディレクトリを除いてzip化)
-@[20-29](S3に上げる)
+@[1-3](依存パッケージのinstall)
+@[4-5](先にgenerate)
+@[6-9](不要なディレクトリを除いてzip化)
+@[11-20](S3に上げる)
 
 +++
 
 ### dist込みの全体をCodedeployで設置
+
++++?code=src/laravel/.travis.yml&lang=yml
+
+@[21-31](S3からcodedeployに投げる)
 
 +++?code=src/laravel/appspec.yml&lang=yml
 
@@ -140,27 +144,32 @@ CI側では`nuxt generate`が失敗しないこともチェックする必要が
 - Specが決まってるので、Wordpressと共存する必要がない
 - 普通に単一リポジトリにVue cliでインストール
 
-+++?code=nuxt.config.js&lang=js
++++?code=src/wp/nuxt.config.js&lang=js
 
-- axios moduleでbaseUrlをwpに設定
+@[4-6](axios moduleを使う)
+@[7-9](baseURLをwp用に設定)
 
 +++
 
 ### Travisでnuxt build
 
-+++code?.travis.yml&lang=yml
++++?code=src/wp/.travis.yml&lang=yml
 
-依存パッケージのinstall
-不要なディレクトリを除いてzip化
-S3に上げる
+@[1-2](依存パッケージのinstall)
+@[5-8](不要なディレクトリを除いてzip化)
+@[10-19](S3に上げる)
 
 +++
 
 ### Codedeployで設置
 
-+++code?appspec.yml&lang=yml
++++?code=src/wp/.travis.yml&lang=yml
 
-普通に設置する
+@[21-31](S3からcodedeployに投げる)
+
++++?code=src/wp/appspec.yml&lang=yml
+
+@[3-5](普通に設置する)
 
 +++
 
@@ -170,15 +179,13 @@ S3に上げる
 - foreverはプロセスを監視し、切れたタイミングで再起動を自動で行ってくれる
 - 何か知らの方法でプロセスを切るか、`forever restart`で再起動をすることで、デプロイが完了する
 
-+++code?appspec.yml&lang=yml
++++?code=src/wp/appspec.yml&lang=yml
 
-起動設定ファイルを設置
+@[22-27](起動設定ファイルを設置)
 
-+++code?application-start.sh&lang=bash
++++?code=src/wp/application_start.sh&lang=bash
 
 再起動のスクリプトを記述
-
-+++
 
 ---
 
@@ -198,20 +205,19 @@ S3に上げる
 
 ### サーバーサイド用のjsファイルを作成
 
----?code=server.js&lang=js
++++?code=src/express/server.js&lang=js
 
-nuxtをrequire
-expressもrequire
-expressの設定を記述
-postなどのエンドポイントを記述
-prod判定をして
-developmentであれば、buildもおこなう
-start用の設定を注入
-ポートを開ける
+@[1-4](nuxtやexpress等必要なものをrequire)
+@[6-15](expressの設定を記述)
+@[18-30](postなどのエンドポイントを記述)
+@[33,36](prod判定をして)
+@[34,37-38](developmentであれば、buildもおこなう)
+@[40](start用の設定を注入)
+@[41](ポートを開ける)
 
 ### 起動設定を対象jsファイルに向ける
 
-+++code?application-start.sh&lang=bash
++++?code=src/express/application_start.sh&lang=bash
 
 再起動のスクリプトをserver.jsに向ける
 
