@@ -116,8 +116,8 @@ client/←追加
 
 +++?code=src/laravel/.travis.yml&lang=yml
 
-`nuxt` コマンドで生成するときと`nuxt generate`する時で、ビルドのフローが異なっているので、
-CI側では`nuxt generate`が失敗しないこともチェックする必要がある
+@[1-31](`nuxt` コマンドで生成するときと`nuxt generate`する時で、ビルドのフローが異なっているので、)
+@[4-5](CI側では`nuxt generate`が失敗しないこともチェックする必要がある)
 
 ---
 
