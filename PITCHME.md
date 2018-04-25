@@ -57,7 +57,20 @@
 - インフラはAWS
 - 最近リリースしているプロダクトは、基本的にNuxt.jsを使用
 
----
++++
+
+## Nuxt.js
+
+Vue.jsのいろんなTipsを凝縮したフレームワーク
+
+- VueRouter
+- SSR
+- Vuex
+- VueMeta
+- webpack
+- babel
+
++++
 
 ## Nuxt.jsを使用しているプロダクト
 
