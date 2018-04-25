@@ -139,7 +139,7 @@ package.json←そのまま
 
 ### nuxt.config.jsの設定を調整
 
-+++?code=src/laravel/nuxt.config.js&lang=js
++++?code=src/laravel/nuxt.config.js&lang=js&title=nuxt.config.js
 
 `client/` を認識するように設定を追加
 
@@ -147,7 +147,7 @@ package.json←そのまま
 
 ### TravisでNuxtGenerateする
 
-+++?code=src/laravel/.travis.yml&lang=yml
++++?code=src/laravel/.travis.yml&lang=yml&title=.travis.yml
 
 @[1-3](依存パッケージのinstall)
 @[4-5](先にgenerate)
@@ -158,11 +158,11 @@ package.json←そのまま
 
 ### dist込みの全体をCodedeployで設置
 
-+++?code=src/laravel/.travis.yml&lang=yml
++++?code=src/laravel/.travis.yml&lang=yml&title=.travis.yml
 
 @[21-31](S3からcodedeployに投げる)
 
-+++?code=src/laravel/appspec.yml&lang=yml
++++?code=src/laravel/appspec.yml&lang=yml&title=appspec.yml
 
 @[3-5](普通に設置する)
 
@@ -170,7 +170,7 @@ package.json←そのまま
 
 ### Nginxでリバプロする
 
-+++?code=src/laravel/app.conf.nginx&lang=nginx
++++?code=src/laravel/app.conf.nginx&lang=nginx&title=nginx.conf
 
 @[4,17](ディレクトリで分岐)
 @[17-22](Generateしているファイルは普通にtry_filesで引っかかる)
@@ -180,7 +180,7 @@ package.json←そのまま
 
 ### (補足)ビルド時にチェックしておくべきポイント
 
-+++?code=src/laravel/.travis.yml&lang=yml
++++?code=src/laravel/.travis.yml&lang=yml&title=.travis.yml
 
 @[1-31](`nuxt` コマンドで生成するときと`nuxt generate`する時で、ビルドのフローが異なっているので、)
 @[4-5](CI側では`nuxt generate`が失敗しないこともチェックする必要がある)
@@ -210,7 +210,7 @@ package.json←そのまま
 - Specが決まってるので、Wordpressと共存する必要がない
 - 普通に単一リポジトリにVue cliでインストール
 
-+++?code=src/wp/nuxt.config.js&lang=js
++++?code=src/wp/nuxt.config.js&lang=js&title=nuxt.config.js
 
 @[4-6](axios moduleを使う)
 @[7-9](baseURLをwp用に設定)
@@ -219,7 +219,7 @@ package.json←そのまま
 
 ### Travisでnuxt build
 
-+++?code=src/wp/.travis.yml&lang=yml
++++?code=src/wp/.travis.yml&lang=yml&title=.travis.yml
 
 @[1-2](依存パッケージのinstall)
 @[5-8](不要なディレクトリを除いてzip化)
@@ -229,11 +229,11 @@ package.json←そのまま
 
 ### Codedeployで設置
 
-+++?code=src/wp/.travis.yml&lang=yml
++++?code=src/wp/.travis.yml&lang=yml&title=.travis.yml
 
 @[21-31](S3からcodedeployに投げる)
 
-+++?code=src/wp/appspec.yml&lang=yml
++++?code=src/wp/appspec.yml&lang=yml&title=appspec.yml
 
 @[3-5](普通に設置する)
 
@@ -245,11 +245,11 @@ package.json←そのまま
 - foreverはプロセスを監視し、切れたタイミングで再起動を自動で行ってくれる
 - 何か知らの方法でプロセスを切るか、`forever restart`で再起動をすることで、デプロイが完了する
 
-+++?code=src/wp/appspec.yml&lang=yml
++++?code=src/wp/appspec.yml&lang=yml&title=appspec.yml
 
 @[22-27](起動設定ファイルを設置)
 
-+++?code=src/wp/application_start.sh&lang=bash
++++?code=src/wp/application_start.sh&lang=bash&title=application_start.sh
 
 再起動のスクリプトを記述
 
@@ -273,7 +273,7 @@ package.json←そのまま
 
 ### サーバーサイド用のjsファイルを作成
 
-+++?code=src/express/server.js&lang=js
++++?code=src/express/server.js&lang=js&title=server.js
 
 @[1-4](nuxtやexpress等必要なものをrequire)
 @[6-15](expressの設定を記述)
@@ -287,7 +287,7 @@ package.json←そのまま
 
 ### 起動設定を対象jsファイルに向ける
 
-+++?code=src/express/application_start.sh&lang=bash
++++?code=src/express/application_start.sh&lang=bash&title=application_start.sh
 
 再起動のスクリプトをserver.jsに向ける
 
