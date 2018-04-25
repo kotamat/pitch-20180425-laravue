@@ -10,12 +10,6 @@
 
 ---
 
-## SCOUTERとは
-
-![会社紹介](assets/img/scouter-1.png)
-
----
-
 ## NuxtMeetup
 
 ![NuxtMeetup](assets/img/nuxt-meetup.png)
@@ -24,6 +18,39 @@
 - お酒飲みながらLTする会
 - 次回は5/23に開催@メルペイ
 - 参加者は110名ほど
+
+---
+
+## SCOUTERとは
+
+![会社紹介](assets/img/scouter-1.png)
+
+---
+
+## SCOUTER内での技術スタック
+
+- 基本的に全てLaravel + Vue.jsの構成
+- インフラはAWS
+- 最近リリースしているプロダクトは、基本的にNuxt.jsを使用
+
+---
+
+## Nuxt.jsを使用しているプロダクト
+
++++
+
+![コーポレート](assets/img/corp.png)
+コーポレートサイト
+
++++
+
+![LP](assets/img/lp.png)
+サービスLP
+
++++
+
+![マガジン](assets/img/magazine.png)
+オウンドメディア
 
 ---
 
