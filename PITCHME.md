@@ -10,6 +10,10 @@
 
 ---
 
+![茂木](src/assets/img/motegi.png)
+
+---
+
 ## NuxtMeetup
 
 ![NuxtMeetup](src/assets/img/nuxt-meetup.png)
