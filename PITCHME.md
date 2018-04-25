@@ -222,6 +222,7 @@ package.json←そのまま
 +++?code=src/wp/.travis.yml&lang=yml&title=.travis.yml
 
 @[1-2](依存パッケージのinstall)
+@[3-4](今回はnuxt buildでファイルを生成)
 @[5-8](不要なディレクトリを除いてzip化)
 @[10-19](S3に上げる)
 
