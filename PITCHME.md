@@ -12,7 +12,7 @@
 
 ## NuxtMeetup
 
-![NuxtMeetup](assets/img/nuxt-meetup.png)
+![NuxtMeetup](src/assets/img/nuxt-meetup.png)
 
 - Nuxt.jsに関するMeetup
 - お酒飲みながらLTする会
@@ -23,7 +23,7 @@
 
 ## SCOUTERとは
 
-![会社紹介](assets/img/scouter-1.png)
+![会社紹介](src/assets/img/scouter-1.png)
 
 ---
 
@@ -39,17 +39,17 @@
 
 +++
 
-![コーポレート](assets/img/corp.png)
+![コーポレート](src/assets/img/corp.png)
 コーポレートサイト
 
 +++
 
-![LP](assets/img/lp.png)
+![LP](src/assets/img/lp.png)
 サービスLP
 
 +++
 
-![マガジン](assets/img/magazine.png)
+![マガジン](src/assets/img/magazine.png)
 オウンドメディア
 
 ---
