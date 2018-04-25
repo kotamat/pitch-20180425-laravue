@@ -26,6 +26,8 @@
 
 ![技術ブログ](src/assets/img/techblog.png)
 
++++
+
 - SCOUTERの技術発信
 - 最近フロント多め
 - Laravelやイベントレポートなどなど
