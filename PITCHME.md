@@ -131,6 +131,8 @@ bootstrap/
 config/
 ...
 client/←追加
+nuxt.config.js←追加
+package.json←そのまま 
 ```
 
 +++
